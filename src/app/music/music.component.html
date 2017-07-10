@@ -1,1 +1,18 @@
-<h2>Find all of your musical needs!</h2>
+<h2>
+  Find Your Dream Jam
+</h2>
+<p>Below you can find a database of local music for sale in the greater Portland area.</p>
+<div class="music-post">
+  <ul>
+    <li *ngFor="let currentPost of posts">
+      <p>Title:{{currentPost.title}}</p>
+      <p>Date Posted:{{currentPost.date}}</p>
+      <p>Description:{{currentPost.description}}</p>
+      <p>Contact:{{currentPost.contact}}</p>
+      <button class="music-list-button" (click)="editButtonHasBeenClicked(currentPost)">Edit Post!</button>
+    </li>
+  </ul>
+</div>
+<app-edit [childSelectedPost]="selectedPost" (doneButtonClickedSender)="finishedEditing()"></app-edit>
+
+<app-add (newPostSender)="addPost($event)"></app-add>
