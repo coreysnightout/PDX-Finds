@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  justify-content: space-around;
+}
+
+.icon img {
+  width: 250px;
+}
+
+.icon {
+  margin: 30px;
+}
