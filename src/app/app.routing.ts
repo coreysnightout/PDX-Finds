@@ -26,7 +26,8 @@ const appRoutes: Routes = [
   {
     path: 'dating',
     component: DatingComponent
-  }
+  },
+
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

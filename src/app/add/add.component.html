@@ -1,0 +1,15 @@
+<div>
+  <li>
+    <h3>Add A New Post</h3>
+    <label>Enter title:</label>
+    <input #newTitle>
+    <label>Enter Date:</label>
+    <input #newDate>
+    <label>Enter Description:</label>
+    <input #newDescription>
+    <label>Enter Contact Info:</label>
+    <input #newContact>
+
+    <button (click)="submitForm(newTitle.value, newDate.value, newDescription.value, newContact.value)">Add</button>
+  </li>
+</div>

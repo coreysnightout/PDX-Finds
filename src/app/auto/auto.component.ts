@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../post.model';
 
 @Component({
@@ -9,6 +9,11 @@ import { Post } from '../post.model';
 
 export class AutoComponent {
   @Input() childAutoList: Post[];
+
+  // @Input() doneButtonClickedSender = new EventEmitter();
+
+  @Output() clickSender = new EventEmitter();
+
   selectedPost = null;
 
   posts: Post[] = [
@@ -16,8 +21,16 @@ export class AutoComponent {
     new Post('2016 Volvo C-32', 'October 31st', 'Fast as hell and a cute little hatchback!', 'EdwardCullen@vampire.net')
   ];
 
-
   editButtonHasBeenClicked(postToEdit: Post) {
-    this.clickSender.emit(postToEdit);
+    console.log(postToEdit);
+    this.selectedPost = postToEdit;
+  }
+
+  finishedEditing() {
+    this.selectedPost = null;
+  }
+
+  addPost(newPostfromChild: Post){
+    this.posts.push(newPostfromChild);
   }
 }

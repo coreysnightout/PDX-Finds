@@ -3,10 +3,16 @@
 </h2>
 <p>Below you can find a database of local vehicles for sale in the greater Portland area.</p>
 <div class="auto-post">
-  <li *ngFor="let currentPost of posts">
-    <p>Title:{{currentPost.title}}</p>
-    <p>Date Posted:{{currentPost.date}}</p>
-    <p>Description:{{currentPost.description}}</p>
-    <p>Contact:{{currentPost.contact}}</p>
-    <button class="auto-list-button" (click)="editButtonHasBeenClicked(currentPost)">Edit Post!</button>
+  <ul>
+    <li *ngFor="let currentPost of posts">
+      <p>Title:{{currentPost.title}}</p>
+      <p>Date Posted:{{currentPost.date}}</p>
+      <p>Description:{{currentPost.description}}</p>
+      <p>Contact:{{currentPost.contact}}</p>
+      <button class="auto-list-button" (click)="editButtonHasBeenClicked(currentPost)">Edit Post!</button>
+    </li>
+  </ul>
 </div>
+<app-edit [childSelectedPost]="selectedPost" (doneButtonClickedSender)="finishedEditing()"></app-edit>
+
+<app-add (newPostSender)="addPost($event)"></app-add>

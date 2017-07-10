@@ -10,6 +10,8 @@ import { AutoComponent } from './auto/auto.component';
 import { HomesComponent } from './homes/homes.component';
 import { MusicComponent } from './music/music.component';
 import { DatingComponent } from './dating/dating.component';
+import { EditComponent } from './edit/edit.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DatingComponent } from './dating/dating.component';
     AutoComponent,
     HomesComponent,
     MusicComponent,
-    DatingComponent
+    DatingComponent,
+    EditComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
